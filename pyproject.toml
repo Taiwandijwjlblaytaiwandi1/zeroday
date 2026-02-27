@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zeroday"
+version = "0.1.0"
+description = "Proof-first vulnerability discovery scaffold"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+zeroday = "zeroday.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
