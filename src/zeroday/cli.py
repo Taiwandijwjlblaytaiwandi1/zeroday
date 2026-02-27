@@ -38,6 +38,9 @@ def main() -> None:
             repo_root = Path(__file__).resolve().parents[2]
             target = repo_root / SAMPLE_MAP[args.language]
 
+        if not target.exists() or not target.is_dir():
+            raise SystemExit(f"Target path must exist and be a directory: {target}")
+
         result = scan_project(target, language=args.language)
         payload = json.dumps(result, indent=2)
         if args.output:
